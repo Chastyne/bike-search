@@ -1,4 +1,4 @@
-const apiKey = 'kYNdAXB3D5ATScbxwI-ej6Z6S5IFMJPz24WXq-8iK_c';
+const apiKey = 'ENTER_YOUR_API_KEY';
 const apiUrl = 'https://bikeindex.org:443/api/v3/search';
 
 // Function to fetch bikes data
