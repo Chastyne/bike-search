@@ -1,5 +1,6 @@
 # bike-search
-A web application that is used to search for stolen bikes in relation to a particular location. It is based on the Bike Index APIs which supports CORS.
+A web application that is used to search for bikes stolen anywhere. It is based on the Bike Index APIs which supports CORS.
+It returns a list of the bike title and the location it was stolen, in some instances this data is not given thus it returns location as null.
 
 ## Authors
 - Ivy
@@ -13,6 +14,9 @@ A web application that is used to search for stolen bikes in relation to a parti
 ## Technologies Used
 - HTML
 - JavaScript
+
+## Live Site
+The live site is hosted on GitHub Pages. You can access it here [https://chastyne.github.io/bike-search/]
 
 
 ## Contact Information

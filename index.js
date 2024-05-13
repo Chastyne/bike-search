@@ -1,9 +1,9 @@
+const apiKey = 'kYNdAXB3D5ATScbxwI-ej6Z6S5IFMJPz24WXq-8iK_c';
+const apiUrl = 'https://bikeindex.org:443/api/v3/search';
 
-// Fetch stolen bikes in a given location
-async function fetchStolenBikes(location) {
-    const apiKey = 'ENTER_YOUR_API_KEY';
-    const apiUrl = 'https://bikeindex.org:443/api/v3/search/stolen';
-    const url = `${apiUrl}?location=${location}&proximity_square=5&access_token=${apiKey}`;
+// Function to fetch bikes data
+async function fetchBikesData() {
+    const url = `${apiUrl}?access_token=${apiKey}`;
 
     try {
         const response = await fetch(url);
@@ -18,18 +18,18 @@ async function fetchStolenBikes(location) {
     }
 }
 
-// Display stolen bikes in the UI
-function displayBikes(bikes) {
+// Function to display bikes data in the UI
+function displayBikesData(bikesData) {
     const bikesList = document.getElementById('bikesList');
-    bikesList.innerHTML = ''; // to clear all previous data
+    bikesList.innerHTML = ''; // Clear previous content
 
-    if (bikes.length === 0) {
-        bikesList.innerHTML = '<p>No stolen bikes found in this area.</p>';
+    if (bikesData.length === 0) {
+        bikesList.innerHTML = '<p>No bike data available.</p>';
         return;
     }
 
     const ul = document.createElement('ul');
-    bikes.forEach(bike => {
+    bikesData.forEach(bike => {
         const li = document.createElement('li');
         li.textContent = `${bike.title} - ${bike.stolen_location}`;
         ul.appendChild(li);
@@ -38,3 +38,7 @@ function displayBikes(bikes) {
     bikesList.appendChild(ul);
 }
 
+// Example usage
+fetchBikesData()
+    .then(displayBikesData)
+    .catch(error => console.error('Error:', error));
